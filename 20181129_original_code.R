@@ -1097,7 +1097,7 @@ for (n in 1:N){
     #calculating GDD by model
     A[12,j,] <- ETo(locations$elevation[n],
                     A[1,j,], A[2,j,], A[4,j,], A[5,j,], A[6,j,],
-                    J=historical_doy,lat=(pi/180)*locations$lat)
+                    J=historical_doy,lat=(pi/180)*locations$lat[n])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
     print(paste(locations$town[n],"now has ETo for",model[j]))
@@ -1112,7 +1112,7 @@ for (n in 1:N){
     #calculating GDD by model
     A[12,j,] <- ETo(locations$elevation[n],
                     A[1,j,], A[2,j,], A[4,j,], A[5,j,], A[6,j,],
-                    J=future_doy,lat=(pi/180)*locations$lat)
+                    J=future_doy,lat=(pi/180)*locations$lat[n])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
     print(paste(locations$town[n],"now has ETo for",model[j]))
@@ -1127,7 +1127,7 @@ for (n in 1:N){
     #calculating GDD by model
     A[12,j,] <- ETo(locations$elevation[n],
                     A[1,j,], A[2,j,], A[4,j,], A[5,j,], A[6,j,],
-                    J=future_doy,lat=(pi/180)*locations$lat)
+                    J=future_doy,lat=(pi/180)*locations$lat[n])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
     print(paste(locations$town[n],"now has ETo for",model[j]))
