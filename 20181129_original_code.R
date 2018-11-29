@@ -1045,6 +1045,7 @@ PLOT_HDX <- function(n,s){
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
 }
 
+#Reference grass potential evapotranspiration
 ETo <- function(elevation,max_temp,min_temp,specific_humidity,wind_speed,rad,J,lat){
   #atmospheric pressure based on site elevation (kPa)
   atmo_pressure <- 101.3*((293-0.0065*elevation)/293)^5.26
