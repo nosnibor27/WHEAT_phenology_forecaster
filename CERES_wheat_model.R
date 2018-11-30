@@ -161,7 +161,7 @@ for (n in 1:N){
   }
 }
 
-#adding planting dates starting with year sequences
+#year sequences to incorporate with planting dates
 historical_years <- seq(1950,2004,1)
 future_years <- seq(2006,2098,1)
 
@@ -236,7 +236,7 @@ GERM <- function(depth){
   return(emergence)
 }
 
-#calculating stage 1 using a planting depth of 2 inches
+#calculating stage 1 using the specified  planting depth
 stage_1 <- GERM(planting_depth)
 
 #STAGE 2: germination to terminal spikelet 
@@ -259,7 +259,7 @@ stage_6 <- 500
 #STAGE 7: physiological maturity to harvest
 stage_7 <- 250
 
-#function to calculate index locations of wheat phenostagers
+#function to calculate index locations of wheat phenostages
 INDEXER <- function(start,vector_1,vector_2){
   S_1 <- as.vector(sapply(
     start,
@@ -310,7 +310,7 @@ for (n in 1:N){
   #assinging an array for each location
   assign(paste0(locations$town[n],"_index_hist"),index_array_hist)
   #printing progress
-  print(paste(locations$town[n],"wheat stage index completed"))
+  print(paste(locations$town[n],"wheat stage index for historical simulation completed"))
 }
 
 #creating index arrays for each location (RCP 4.5)
@@ -330,7 +330,7 @@ for (n in 1:N){
   #assinging an array for each location
   assign(paste0(locations$town[n],"_index_45"),index_array_fut)
   #printing progress
-  print(paste(locations$town[n],"wheat stage index completed"))
+  print(paste(locations$town[n],"wheat stage index for RCP 4.5 completed"))
 }
 
 #creating index arrays for each location (RCP 8.5)
@@ -350,5 +350,5 @@ for (n in 1:N){
   #assinging an array for each location
   assign(paste0(locations$town[n],"_index_85"),index_array_fut)
   #printing progress
-  print(paste(locations$town[n],"wheat stage index completed"))
+  print(paste(locations$town[n],"wheat stage index for RCP 8.5 completed"))
 }
