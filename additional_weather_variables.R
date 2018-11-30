@@ -24,7 +24,7 @@ for (n in 1:N){
     A[9,j,] <- RH(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
-    print(paste(locations$town[n],"now has RH for",model[j]))
+    print(paste(locations$town[n],"historical simulation now has RH for",model[j]))
   }
 }
 
@@ -38,7 +38,7 @@ for (n in 1:N){
     A[9,j,] <- RH(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has RH for",model[j]))
+    print(paste(locations$town[n],"RCP 4.5 now has RH for",model[j]))
   }
 }
 
@@ -52,7 +52,7 @@ for (n in 1:N){
     A[9,j,] <- RH(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
-    print(paste(locations$town[n],"now has RH for",model[j]))
+    print(paste(locations$town[n],"RCP 8.5 now has RH for",model[j]))
   }
 }
 
@@ -82,7 +82,7 @@ for (n in 1:N){
     A[10,j,] <- VPD(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
-    print(paste(locations$town[n],"now has VPD for",model[j]))
+    print(paste(locations$town[n],"historical simulation now has VPD for",model[j]))
   }
 }
 
@@ -96,7 +96,7 @@ for (n in 1:N){
     A[10,j,] <- VPD(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has VPD for",model[j]))
+    print(paste(locations$town[n],"RCP 4.5 now has VPD for",model[j]))
   }
 }
 
@@ -110,7 +110,7 @@ for (n in 1:N){
     A[10,j,] <- VPD(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
-    print(paste(locations$town[n],"now has VPD for",model[j]))
+    print(paste(locations$town[n],"RCP 8.5 now has VPD for",model[j]))
   }
 }
 
@@ -136,7 +136,7 @@ for (n in 1:N){
     A[11,j,] <- HDX(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
-    print(paste(locations$town[n],"now has HDX for",model[j]))
+    print(paste(locations$town[n],"historical simulation now has HDX for",model[j]))
   }
 }
 
@@ -150,7 +150,7 @@ for (n in 1:N){
     A[11,j,] <- HDX(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has HDX for",model[j]))
+    print(paste(locations$town[n],"RCP 4.5 now has HDX for",model[j]))
   }
 }
 
@@ -164,7 +164,7 @@ for (n in 1:N){
     A[11,j,] <- HDX(locations$elevation[n], A[1,j,], A[2,j,], A[4,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
-    print(paste(locations$town[n],"now has HDX for",model[j]))
+    print(paste(locations$town[n],"RCP 8.5 now has HDX for",model[j]))
   }
 }
 
@@ -224,7 +224,7 @@ for (n in 1:N){
                     J=historical_doy,lat=(pi/180)*locations$lat[n])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
-    print(paste(locations$town[n],"now has ETo for",model[j]))
+    print(paste(locations$town[n],"historical simulation now has ETo for",model[j]))
   }
 }
 
@@ -239,7 +239,7 @@ for (n in 1:N){
                     J=future_doy,lat=(pi/180)*locations$lat[n])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has ETo for",model[j]))
+    print(paste(locations$town[n],"RCP 4.5 now has ETo for",model[j]))
   }
 }
 
@@ -254,6 +254,6 @@ for (n in 1:N){
                     J=future_doy,lat=(pi/180)*locations$lat[n])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
-    print(paste(locations$town[n],"now has ETo for",model[j]))
+    print(paste(locations$town[n],"RCP 8.5 now has ETo for",model[j]))
   }
 }
