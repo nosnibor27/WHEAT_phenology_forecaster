@@ -28,7 +28,7 @@ for (n in 1:N){
     A[7,j,] <- GDD(A[1,j,],A[2,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has GDD for",model[j]))
+    print(paste(locations$town[n],"historical simulation now has GDD for",model[j]))
   }
 }
 
@@ -42,7 +42,7 @@ for (n in 1:N){
     A[7,j,] <- GDD(A[1,j,],A[2,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has GDD for",model[j]))
+    print(paste(locations$town[n],"RCP 4.5 now has GDD for",model[j]))
   }
 }
 
@@ -56,7 +56,7 @@ for (n in 1:N){
     A[7,j,] <- GDD(A[1,j,],A[2,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
-    print(paste(locations$town[n],"now has GDD for",model[j]))
+    print(paste(locations$town[n],"RCP 8.5 now has GDD for",model[j]))
   }
 }
 
@@ -125,7 +125,7 @@ for (n in 1:N){
     A[8,j,] <- A[7,j,]*C
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
-    print(paste(locations$town[n],"now has GDD*RDR for",model[j]))
+    print(paste(locations$town[n],"historical simulation now has GDD*RDR for",model[j]))
   }
 }
 
@@ -141,7 +141,7 @@ for (n in 1:N){
     A[8,j,] <- A[7,j,]*C
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_45"),A)
-    print(paste(locations$town[n],"now has GDD*RDR for",model[j]))
+    print(paste(locations$town[n],"RCP 4.5 now has GDD*RDR for",model[j]))
   }
 }
 
@@ -157,7 +157,7 @@ for (n in 1:N){
     A[8,j,] <- A[7,j,]*C
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_85"),A)
-    print(paste(locations$town[n],"now has GDD*RDR for",model[j]))
+    print(paste(locations$town[n],"RCP 8.5 now has GDD*RDR for",model[j]))
   }
 }
 
