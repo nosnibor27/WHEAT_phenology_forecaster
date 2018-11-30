@@ -1,2 +1,2 @@
-# wheat_stage_index
-Applying the CERES-Wheat model in R to generate climate summaries for phenological stages of wheat
+# Forecasting climate conditions during phenological stages of winter wheat under climate change
+Master file is 'init.R'
