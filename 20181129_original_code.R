@@ -473,7 +473,7 @@ pd_fut_e <- pd_fut_e + 1
 pd_fut_m <- pd_fut_m + 1
 pd_fut_l <- pd_fut_l + 1
 
-#ANDREW'S ADAPTATION OF THE CERES-WHEAT GROWTH MODEL
+#ADAPTATION OF THE CERES-WHEAT GROWTH MODEL
 
 #STAGE 1: germination to emergence
 
@@ -892,7 +892,7 @@ for (n in 1:N){
   }
 }
 
-LOT_VPD <- function(n,s){
+PLOT_VPD <- function(n,s){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
