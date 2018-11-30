@@ -1,7 +1,5 @@
 # Forecasting climate conditions during phenological stages of winter wheat under climate change
 
-##Background
-
 This repository is, at it's core, an applied indexing problem.
 
 The master file is `init.R`. Locations in the form of "Town Location" are concatenated into a vector called `sites`. The `geocode` function from the `ggmap` package is used to query the appropriate coordinates and add them to the `locations` dataframe. The "Town Location" format is important as "Town" will be utilized when naming the subsequent arrays. Elevation data is queried next by locting the appropriate raster within the gridMET database using a netCDF file.
