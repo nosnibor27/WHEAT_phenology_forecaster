@@ -14,20 +14,6 @@ for (n in 1:N){
     A[7,j,] <- GDD(A[1,j,],A[2,j,])
     #placing the results back into the array for each town
     assign(paste0(locations$town[n],"_hist"),A)
-    print(paste(locations$town[n],"now has GDD for",model[j]))
-  }
-}
-
-#adding a GDD dimension [variable = 7] to all the RCP 4.5 arrays
-for (n in 1:N){
-  #copying the array of interest
-  A <- get(paste0(locations$town[n],"_45"))
-  #looping through the models
-  for(j in 1:20){
-    #calculating GDD by model
-    A[7,j,] <- GDD(A[1,j,],A[2,j,])
-    #placing the results back into the array for each town
-    assign(paste0(locations$town[n],"_45"),A)
     print(paste(locations$town[n],"historical simulation now has GDD for",model[j]))
   }
 }
