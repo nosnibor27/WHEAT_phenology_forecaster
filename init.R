@@ -5,7 +5,7 @@ library(RNetCDF)
 library(zoo)
 
 #Add sites of interest here using "Town State"
-sites <- c("Colfax Washington",
+sites <- c("Pullman Washington",
            "Pendleton Oregon",
            "Havre Montana",
            "Akron Colorado",
@@ -116,3 +116,5 @@ source("additional_weather_variables.r")
 #plotting functions
 source("plotting.r")
 
+#plotting dashboard example
+PLOT_DASHBOARD(2,4,2)
