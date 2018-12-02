@@ -389,3 +389,56 @@ PLOT_RAIN <- function(n,s,p){
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
 }
+
+PLOT_STAGE <- function(n,s,p){
+  A <- get(paste0(locations$town[n],"_span_hist"))
+  B <- get(paste0(locations$town[n],"_span_45"))
+  C <- get(paste0(locations$town[n],"_span_85"))
+  quantile_hist <- apply(A[,,s,p],2,QUANT)
+  quantile_45 <- apply(B[,,s,p],2,QUANT)
+  quantile_85 <- apply(C[,,s,p],2,QUANT)
+  start_date <- c(pd_hist_e[1],pd_hist_m[1],pd_hist_l[1])
+  month_doy <- c(1,32,60,91,121,152,182,213,244)
+  month_lab <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep")
+  month_lty <- c(1,rep(2,8))
+  stage_lab <- c("Germination","Emergence","Tillering","Booting",
+                 "Flowering","Grain filling","Maturity")
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="Days after planting",
+       main=stage_lab[s],axes=FALSE)
+  box()
+  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(2,at=seq(0,350,50),las=2)
+  for (m in 1:9){
+    abline(h=(365-start_date[p])+month_doy[m],lty=month_lty[m])
+    text(x=150,y=(365-start_date[p])+month_doy[m],labels = month_lab[m],pos=3)
+  }
+    shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
+  shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
+  shade(quantile_45[c(1,5),],lim=seq(55,147,1),col=col.alpha("blue",0.15))
+  shade(quantile_45[c(2,4),],lim=seq(55,147,1),col=col.alpha("blue",0.15))
+  shade(quantile_85[c(1,5),],lim=seq(55,147,1),col=col.alpha("red",0.15))
+  shade(quantile_85[c(2,4),],lim=seq(55,147,1),col=col.alpha("red",0.15))
+  lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
+  lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
+  lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+}
+
+layout(matrix(c(1,2,2,2,1,3,3,3,4,5,6,7), nrow = 3, ncol = 4, byrow = TRUE))
+PLOT_STAGE(1,4+1,2)
+PLOT_AVG_TEMP(1,4,2)
+PLOT_RH(1,4,2)
+PLOT_VPD(1,4,2)
+PLOT_HDX(1,4,2)
+PLOT_RAIN(1,4,2)
+PLOT_ETo(1,4,2)
+
+PLOT_DASHBOARD <- function(n,s,p){
+  layout(matrix(c(1,2,2,2,1,3,3,3,4,5,6,7), nrow = 3, ncol = 4, byrow = TRUE))
+  PLOT_STAGE(n,s+1,p)
+  PLOT_AVG_TEMP(n,s,p)
+  PLOT_RH(n,s,p)
+  PLOT_VPD(n,s,p)
+  PLOT_HDX(n,s,p)
+  PLOT_RAIN(n,s,p)
+  PLOT_ETo(n,s,p)
+}
