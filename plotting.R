@@ -77,7 +77,7 @@ PLOT_DOY <- function(n,s,p){
   plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="J",
        main="Day of year",axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,365,30),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -124,10 +124,10 @@ PLOT_AVG_TEMP <- function(n,s,p){
     }
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
-  plot(0,type="n",xlim=c(0,150),ylim=c(0,40),xlab="Year",ylab="?C",
-       main="Mean temperature",axes=FALSE)
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,40),xlab="Year",ylab="C",
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,40,5),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -138,6 +138,7 @@ PLOT_AVG_TEMP <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext("Mean Temperature",side=3,line=-1.5)
 }
 
 PLOT_RH <- function(n,s,p){
@@ -175,9 +176,9 @@ PLOT_RH <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,1),xlab="Year",ylab="%",
-       main="Relative humidity",axes=FALSE)
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,1,0.1),las=2,labels=seq(0,100,10))
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -188,6 +189,7 @@ PLOT_RH <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext("Relative humidity",side=3,line=-1.5)
 }
 
 PLOT_VPD <- function(n,s,p){
@@ -225,9 +227,9 @@ PLOT_VPD <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,3),xlab="Year",ylab="kPa",
-       main="Vapor pressure deficit",axes=FALSE)
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,3,0.5),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -238,6 +240,7 @@ PLOT_VPD <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext("Vapor pressure deficit",side=3,line=-1.5)
 }
 
 PLOT_HDX <- function(n,s,p){
@@ -274,10 +277,10 @@ PLOT_HDX <- function(n,s,p){
     }
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
-  plot(0,type="n",xlim=c(0,150),ylim=c(0,30),xlab="Year",ylab="?C",
-       main="Humidex",axes=FALSE)
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,30),xlab="Year",ylab="C",
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,30,5),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -288,6 +291,7 @@ PLOT_HDX <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext("Humidex",side=3,line=-1.5)
 }
 
 PLOT_ETo <- function(n,s,p){
@@ -325,9 +329,9 @@ PLOT_ETo <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,100),xlab="Year",ylab="mm",
-       main="Potential evapotranspiration",axes=FALSE)
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,100,10),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -338,6 +342,7 @@ PLOT_ETo <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext("Potential evapotranspiration",side=3,line=-1.5)
 }
 
 PLOT_RAIN <- function(n,s,p){
@@ -375,9 +380,9 @@ PLOT_RAIN <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,100),xlab="Year",ylab="mm",
-       main="Total rainfall",axes=FALSE)
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,100,10),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
@@ -388,6 +393,7 @@ PLOT_RAIN <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext("Rainfall",side=3,line=-1.5)
 }
 
 PLOT_STAGE <- function(n,s,p){
@@ -404,9 +410,9 @@ PLOT_STAGE <- function(n,s,p){
   stage_lab <- c("Germination","Emergence","Tillering","Booting",
                  "Flowering","Grain filling","Maturity")
   plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="Days after planting",
-       main=stage_lab[s],axes=FALSE)
+       main=NULL,axes=FALSE)
   box()
-  axis(1,at=seq(0,150,25),las=2,labels=seq(1950,2100,25))
+  axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,350,50),las=2)
   for (m in 1:9){
     abline(h=(365-start_date[p])+month_doy[m],lty=month_lty[m])
@@ -421,19 +427,13 @@ PLOT_STAGE <- function(n,s,p){
   lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
+  mtext(stage_lab[s],side=3,line=-2.5,cex=2)
 }
 
-layout(matrix(c(1,2,2,2,1,3,3,3,4,5,6,7), nrow = 3, ncol = 4, byrow = TRUE))
-PLOT_STAGE(1,4+1,2)
-PLOT_AVG_TEMP(1,4,2)
-PLOT_RH(1,4,2)
-PLOT_VPD(1,4,2)
-PLOT_HDX(1,4,2)
-PLOT_RAIN(1,4,2)
-PLOT_ETo(1,4,2)
-
-PLOT_DASHBOARD <- function(n,s,p){
+PLOT_DASHBOARD_1 <- function(n,s,p){
   layout(matrix(c(1,2,2,2,1,3,3,3,4,5,6,7), nrow = 3, ncol = 4, byrow = TRUE))
+  par(oma=c(0.5,0.5,5,0.5))
+  par(mar=c(4,4,0.2,0.2))
   PLOT_STAGE(n,s+1,p)
   PLOT_AVG_TEMP(n,s,p)
   PLOT_RH(n,s,p)
@@ -441,4 +441,17 @@ PLOT_DASHBOARD <- function(n,s,p){
   PLOT_HDX(n,s,p)
   PLOT_RAIN(n,s,p)
   PLOT_ETo(n,s,p)
+  mtext(locations$sites[n],side=3,line=1,outer=TRUE,cex=3)
+}
+
+PLOT_DASHBOARD_2 <- function(n,s,p){
+  layout(matrix(c(1,2,3,1,4,5), nrow = 2, ncol = 3, byrow = TRUE))
+  par(oma=c(0.5,0.5,5,0.5))
+  par(mar=c(4,4,0.2,0.2))
+  PLOT_STAGE(n,s+1,p)
+  PLOT_AVG_TEMP(n,s,p)
+  PLOT_RH(n,s,p)
+  PLOT_RAIN(n,s,p)
+  PLOT_ETo(n,s,p)
+  mtext(locations$sites[n],side=3,line=1,outer=TRUE,cex=3)
 }
