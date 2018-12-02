@@ -245,6 +245,101 @@ stage_6 <- 500
 #STAGE 7: physiological maturity to harvest
 stage_7 <- 250
 
+#function to calculate number of days (span) to complete each stage
+SPANNER <- function(start,vector_1,vector_2){
+  S_1 <- as.vector(sapply(
+    start,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_1)[1]))
+  S_2 <- as.vector(sapply(
+    start + S_1,
+    function(x) which(cumsum(vector_2[x:length(vector_2)]) >= stage_2)[1]))
+  S_3 <- as.vector(sapply(
+    start + S_1 + S_2,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_3)[1]))
+  S_4 <- as.vector(sapply(
+    start + S_1 + S_2 + S_3,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_4)[1]))
+  S_5 <- as.vector(sapply(
+    start + S_1 + S_2 + S_3 + S_4,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_5)[1]))
+  S_6 <- as.vector(sapply(
+    start + S_1 + S_2 + S_3 + S_4 + S_5,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_6)[1]))
+  S_7 <- as.vector(sapply(
+    start + S_1 + S_2 + S_3 + S_4 + S_5 + S_6,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_7)[1]))
+  #missing the addition of "start" present in INDEXER function
+  idx_1 <- S_1
+  idx_2 <- S_1 + S_2
+  idx_3 <- S_1 + S_2 + S_3
+  idx_4 <- S_1 + S_2 + S_3 + S_4
+  idx_5 <- S_1 + S_2 + S_3 + S_4 + S_5
+  idx_6 <- S_1 + S_2 + S_3 + S_4 + S_5 + S_6
+  idx_7 <- S_1 + S_2 + S_3 + S_4 + S_5 + S_6 + S_7
+  string <- c(idx_1,idx_2,idx_3,idx_4,idx_5,idx_6,idx_7)
+  matrix(string,nrow=length(start),ncol=7)
+}
+
+#creating duration arrays for each location (historical)
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_hist"))
+  #creating an indexing array [model, year, stage, planting]
+  span_array_hist <- array(dim=c(20,55,7,3))
+  for(j in 1:20){
+    matrix_1 <- SPANNER(pd_hist_e,A[7,j,],A[8,j,])
+    matrix_2 <- SPANNER(pd_hist_m,A[7,j,],A[8,j,])
+    matrix_3 <- SPANNER(pd_hist_l,A[7,j,],A[8,j,])
+    span_array_hist[j,,,1] <- matrix_1
+    span_array_hist[j,,,2] <- matrix_2
+    span_array_hist[j,,,3] <- matrix_3
+  }
+  #assinging an array for each location
+  assign(paste0(locations$town[n],"_span_hist"),span_array_hist)
+  #printing progress
+  print(paste(locations$town[n],"historical simulation wheat stage duration completed"))
+}
+
+#creating duration arrays for each location (RCP 4.5)
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_45"))
+  #creating an indexing array [model, year, stage, planting]
+  span_array_fut <- array(dim=c(20,93,7,3))
+  for(j in 1:20){
+    matrix_1 <- SPANNER(pd_fut_e,A[7,j,],A[8,j,])
+    matrix_2 <- SPANNER(pd_fut_m,A[7,j,],A[8,j,])
+    matrix_3 <- SPANNER(pd_fut_l,A[7,j,],A[8,j,])
+    span_array_fut[j,,,1] <- matrix_1
+    span_array_fut[j,,,2] <- matrix_2
+    span_array_fut[j,,,3] <- matrix_3
+  }
+  #assinging an array for each location
+  assign(paste0(locations$town[n],"_span_45"),span_array_fut)
+  #printing progress
+  print(paste(locations$town[n],"RCP 4.5 wheat stage duration completed"))
+}
+
+#creating duration arrays for each location (RCP 8.5)
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_85"))
+  #creating an indexing array [model, year, stage, planting]
+  span_array_fut <- array(dim=c(20,93,7,3))
+  for(j in 1:20){
+    matrix_1 <- SPANNER(pd_fut_e,A[7,j,],A[8,j,])
+    matrix_2 <- SPANNER(pd_fut_m,A[7,j,],A[8,j,])
+    matrix_3 <- SPANNER(pd_fut_l,A[7,j,],A[8,j,])
+    span_array_fut[j,,,1] <- matrix_1
+    span_array_fut[j,,,2] <- matrix_2
+    span_array_fut[j,,,3] <- matrix_3
+  }
+  #assinging an array for each location
+  assign(paste0(locations$town[n],"_span_85"),span_array_fut)
+  #printing progress
+  print(paste(locations$town[n],"RCP 8.5 wheat stage duration completed"))
+}
+
 #function to calculate index locations of wheat phenostages
 INDEXER <- function(start,vector_1,vector_2){
   S_1 <- as.vector(sapply(
