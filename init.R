@@ -119,4 +119,4 @@ source("plotting.r")
 #plotting dashboard example
 PLOT_DASHBOARD_1(1,4,2)
 
-PLOT_DASHBOARD_2(1,4,2)
+PLOT_DASHBOARD_2(5,4,2)
