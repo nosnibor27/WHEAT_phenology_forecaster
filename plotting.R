@@ -404,31 +404,34 @@ PLOT_STAGE <- function(n,s,p){
   quantile_45 <- apply(B[,,s,p],2,QUANT)
   quantile_85 <- apply(C[,,s,p],2,QUANT)
   start_date <- c(pd_hist_e[1],pd_hist_m[1],pd_hist_l[1])
-  month_doy <- c(1,32,60,91,121,152,182,213,244)
-  month_lab <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep")
-  month_lty <- c(1,rep(2,8))
+  month_doy <- c(1,32,60,91,121,152,182,213,244,274,305)
+  month_lab <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov")
+  month_lty <- c(1,rep(2,10))
   stage_lab <- c("Germination","Emergence","Tillering","Booting",
                  "Flowering","Grain filling","Maturity")
-  plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="Days after planting",
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="Day of the year",
        main=NULL,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,350,50),las=2)
-  for (m in 1:9){
-    abline(h=(365-start_date[p])+month_doy[m],lty=month_lty[m])
-    text(x=150,y=(365-start_date[p])+month_doy[m],labels = month_lab[m],pos=3)
+  for (m in 1:11){
+    abline(h=month_doy[m],lty=month_lty[m])
+    text(x=150,y=month_doy[m],labels = month_lab[m],pos=3)
   }
-    shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
-  shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
-  shade(quantile_45[c(1,5),],lim=seq(55,147,1),col=col.alpha("blue",0.15))
-  shade(quantile_45[c(2,4),],lim=seq(55,147,1),col=col.alpha("blue",0.15))
-  shade(quantile_85[c(1,5),],lim=seq(55,147,1),col=col.alpha("red",0.15))
-  shade(quantile_85[c(2,4),],lim=seq(55,147,1),col=col.alpha("red",0.15))
-  lines(y=quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
-  lines(y=quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
-  lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
-  mtext(stage_lab[s],side=3,line=-2.5,cex=2)
+  shade((start_date[p]+quantile_hist[c(1,5),])-365,lim=seq(1,55,1),col=col.alpha("black",0.15))
+  shade((start_date[p]+quantile_hist[c(2,4),])-365,lim=seq(1,55,1),col=col.alpha("black",0.15))
+  shade((start_date[p]+quantile_45[c(1,5),])-365,lim=seq(55,147,1),col=col.alpha("blue",0.15))
+  shade((start_date[p]+quantile_45[c(2,4),])-365,lim=seq(55,147,1),col=col.alpha("blue",0.15))
+  shade((start_date[p]+quantile_85[c(1,5),])-365,lim=seq(55,147,1),col=col.alpha("red",0.15))
+  shade((start_date[p]+quantile_85[c(2,4),])-365,lim=seq(55,147,1),col=col.alpha("red",0.15))
+  lines(y=(start_date[p]+quantile_hist[3,])-365,x=seq(1:55),col="black",lwd=2)
+  lines(y=(start_date[p]+quantile_45[3,])-365,x=seq(55,147,1),col="blue",lwd=2)
+  lines(y=(start_date[p]+quantile_85[3,])-365,x=seq(55,147,1),col="red",lwd=2)
+  mtext(stage_lab[s],side=3,line=1.5,cex=2)
+  legend("top", inset=.02, title="Scenario",
+         c("Historical simulation","RCP 4.5","RCP 8.5"), fill=c("black","blue","red"))
 }
+
 
 PLOT_DASHBOARD_1 <- function(n,s,p){
   layout(matrix(c(1,2,2,2,1,3,3,3,4,5,6,7), nrow = 3, ncol = 4, byrow = TRUE))
