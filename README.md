@@ -17,7 +17,7 @@ Data is collected by running `netcdf_downloader.R`. The functions `open.nc` and 
 - Palouse, Wa
 - Tekoa, WA
 - Hay, WA
-- Endicott, Wa
+- Endicott, WA
 - Pendleton, OR
 - Havre, MT
 - Akron, CO
