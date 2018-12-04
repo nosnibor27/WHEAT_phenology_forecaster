@@ -43,5 +43,5 @@ Special functions for plotting results are created when running `plotting.R`. Th
 
 Summary figures for 6 locations across the continental Unided States are available in `plotting_examples`. The results for the flowering and harvesting stage are below. Flowering was generated using `PLOT_DASHBOARD_2` and Maturity was generated using `PLOT_DASHBOARD_1`. The planting date used was October 1st.
 
-[[https://raw.github.com/nosnibor27/WW_phenology_forecaster/plotting_examples/Pullman_flowering.png]]
+[[https://github.com/nosnibor27/WW_phenology_forecaster/plotting_examples/Pullman_flowering.png]]
 
