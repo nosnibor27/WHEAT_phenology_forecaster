@@ -39,4 +39,9 @@ Running `CERES_wheat_model.R` initializes the wheat growth model. It begins by c
 
 After all the index locations have been determined, additional humidity related variables are calculated for each location by running `additional_weather_variables.R`. The current list of calculated variables are: relative humidity, vapor pressure deficit, humidex (or humisery), and potential evapotranspiration.
 
-Special functions for plotting results are created when running `plotting.R`. There are 3 arguments: location, stage, and planting date. `PLOT_DOY(2,5,2)` will plot the day of the year for the 2nd town in the `locations` dataframe, the 5th stage of wheat development which is where flowering occurs, for the 2nd planting date. Both `PLOT_DASHBOARD_1` and `PLOT_DASHBOARD_2` are used to make summary plots.
+Special functions for plotting results are created when running `plotting.R`. There are 3 arguments: location, stage, and planting date. Within the plotting functions are the scripts for subsetting and collecting climate data between consecutive phenological stages. `PLOT_DOY(2,5,2)` will plot the day of the year for the 2nd town in the `locations` dataframe, the 5th stage of wheat development which is where flowering occurs, for the 2nd planting date. Both `PLOT_DASHBOARD_1` and `PLOT_DASHBOARD_2` are used to make summary plots.
+
+Summary figures for 6 locations across the continental Unided States are available in `plotting_examples`. The results for the flowering and harvesting stage are below. Flowering was generated using `PLOT_DASHBOARD_2` and Maturity was generated using `PLOT_DASHBOARD_1`. The planting date used was October 1st.
+
+![alt text](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/plotting_examples/Pullman_flowering.png)
+
