@@ -8,25 +8,25 @@ Data is requested from the Northwest Knowledge Network THREDDS server. The URL i
 
 Data is requested by running `netcdf_downloader.R`. The functions `open.nc` and `var.get.nc` from the `RNetCDF` package are used to collect data from the appropriate raster within the dataset for each location. Unfortunately, it takes forever to download and the `for` loop is not parallelized. I currently have data for the following locations:
 
--Moscow, ID
--Genesee, ID
--Troy, ID
--Deary, ID
--Potlatch, ID
--Pullman, WA
--Palouse, Wa
--Tekoa, WA
--Hay, WA
--Endicott, Wa
--Pendleton, OO
--Havre, MT
--Akron, CO
--Hutchinson, KS
--Enid, OK
+- Moscow, ID
+- Genesee, ID
+- Troy, ID
+- Deary, ID
+- Potlatch, ID
+- Pullman, WA
+- Palouse, Wa
+- Tekoa, WA
+- Hay, WA
+- Endicott, Wa
+- Pendleton, OO
+- Havre, MT
+- Akron, CO
+- Hutchinson, KS
+- Enid, OK
 
-Data for Pullman, WA is in the `DATA` folder. Update line 8 of `init.R` to `sites <- c("Pullman Washington")` and run the appropriate code to set `N` to 1 and query latitude, longitude, and elevation data. The same `locations` dataframe can also be used to load in previously downloaded arrays by running `loading_arrays.R`. When starting from saved arrays, be sure that `model` is in your environment as it gets called during subsequent processing while printing progress.
+Data for Pullman, WA is in the `DATA` folder. Update line 8 of `init.R` to `sites <- c("Pullman Washington")` and run the appropriate code to set `N` to 1 and query latitude, longitude, and elevation data. The `locations` dataframe can also be used to load in previously downloaded arrays by running `loading_arrays.R`. When starting from saved arrays, be sure that `model` is in your environment as it gets called during subsequent processing while printing progress.
 
-After the arrays for each location have been collected, they can be saved as .rdata files by running `saving_arrays.R`. The same `locations` dataframe can also be used to load in previously downloaded arrays by running `loading_arrays.R`. 
+After the arrays for each location have been collected, they can be saved as .rdata files by running `saving_arrays.R`. 
 
 There are 4 user-defined inputs for the CERES-Wheat growth model: `planting_depth`, `planting_dates`, a genetic photoperiod coefficient `G_1`, and `phyllochron`. The planting depth is in inches. Currently, 3 planting dates are used to cover the reported historical range. They are currently the 1st of September, October, and November and represent early-, mid-, and late-season planting dates. They can be changed to any value, provided they are in the "-MM-DD" format. Wheat varieties have different growth characteristics due to photoperiod, which is defined using `G_1`. The range referenced in the original CERES-Wheat material is from 0.002 to 0.006. The current default is 0.0044 which is for "Nugaines" wheat. The other important variety-specific term is `phyllochron` which is the leaf appearance rate based on thermal time per leaf. When this value is not known the recommended default is 95.
 
