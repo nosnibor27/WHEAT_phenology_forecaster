@@ -6,7 +6,7 @@ The master file is `init.R`. Locations in the form of "Town Location" are concat
 
 Data is requested from the Northwest Knowledge Network THREDDS server. The URL is constructed using combinations of the base URL named `url_1`, the list of global climate models named `model`, a specification for which model was used named `condition`, and a list of available climate variables named `variable_1`. While aggregated data is available, it is easier on the server to request the daily climate data in pieces of around ~5000 to ~7000 days at a time instead of the full ~20,000 to ~33,000 days for the historical and future datasets, respectively. Those are specified using either `timestep_historical`, `timestep_45`, or `timestep_85`.
 
-Data is requested by running `netcdf_downloader.R`. The functions `open.nc` and `var.get.nc` from the `RNetCDF` package are used to collect data from the appropriate raster within the dataset for each location. Unfortunately, it takes forever to download and the `for` loop is not parallelized. I currently have data for the following locations:
+Data is collected by running `netcdf_downloader.R`. The functions `open.nc` and `var.get.nc` from the `RNetCDF` package are used to collect data from the appropriate raster within the dataset for each location. Unfortunately, it takes forever to download and the `for` loop is not parallelized. I currently have data for the following locations:
 
 - Moscow, ID
 - Genesee, ID
