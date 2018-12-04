@@ -92,7 +92,7 @@ source("saving_arrays.r")
 #option to load saved arrays
 source("loading_arrays.r")
 
-#inputs for wheat grown model
+#inputs for CERES-Wheat growth model
 
 #planting depth (in inches)
 planting_depth <- 2
