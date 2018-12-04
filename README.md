@@ -41,7 +41,4 @@ After all the index locations have been determined, additional humidity related 
 
 Special functions for plotting results are created when running `plotting.R`. There are 3 arguments: location, stage, and planting date. Within the plotting functions are the scripts for subsetting and collecting climate data between consecutive phenological stages. `PLOT_DOY(2,5,2)` will plot the day of the year for the 2nd town in the `locations` dataframe, the 5th stage of wheat development which is where flowering occurs, for the 2nd planting date. Both `PLOT_DASHBOARD_1` and `PLOT_DASHBOARD_2` are used to make summary plots.
 
-Summary figures for 6 locations across the continental Unided States are available in `plotting_examples`. The results for the flowering and harvesting stage are below. Flowering was generated using `PLOT_DASHBOARD_2` can be viewed [here](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_flowering.png) and Maturity was generated using `PLOT_DASHBOARD_1` can be viewed [here](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_maturity.png). The planting date used was October 1st.
-
-
-
+Summary figures for 6 locations across the continental Unided States are available in `plotting_examples`.Flowering for Pullman, WA generated using `PLOT_DASHBOARD_2` can be viewed [here](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_flowering.png) and maturity for Pullman, WA generated using `PLOT_DASHBOARD_1` can be viewed [here](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_maturity.png). The planting date used was October 1st.
