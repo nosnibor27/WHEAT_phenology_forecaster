@@ -18,7 +18,7 @@ Data is requested by running `netcdf_downloader.R`. The functions `open.nc` and 
 - Tekoa, WA
 - Hay, WA
 - Endicott, Wa
-- Pendleton, OO
+- Pendleton, OR
 - Havre, MT
 - Akron, CO
 - Hutchinson, KS
