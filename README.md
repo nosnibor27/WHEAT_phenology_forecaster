@@ -45,10 +45,6 @@ Summary figures for 6 locations across the continental Unided States are availab
 
 ![](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_flowering.png)
 
-The final stage, from physiological maturity to harvest for Pullman, WA generated using `PLOT_DASHBOARD_1` is shown below.
-
-![](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_maturity.png)
-
 The planting date used was October 1st. The darker shaded region is the inter-quartile range (25% to 75%), the lighter region is the inter-decile range (10 to 90%) and the thick line is the median (50%) for the 20 model ensemble.
 
 
