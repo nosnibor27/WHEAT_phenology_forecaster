@@ -14,7 +14,7 @@ Data is collected by running `netcdf_downloader.R`. The functions `open.nc` and 
 - Deary, ID
 - Potlatch, ID
 - Pullman, WA
-- Palouse, Wa
+- Palouse, WA
 - Tekoa, WA
 - Hay, WA
 - Endicott, WA
