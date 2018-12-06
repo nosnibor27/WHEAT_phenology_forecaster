@@ -9,7 +9,7 @@ Data is requested from the Northwest Knowledge Network THREDDS server. The URL i
 Data is collected by running `netcdf_downloader.R`. The functions `open.nc` and `var.get.nc` from the `RNetCDF` package are used to collect data from the appropriate raster within the dataset for each location. Unfortunately, it takes forever to download and the `for` loop is not parallelized. I currently have data for the following locations:
 
 |Idaho|Washington|Other states|
-|---|---|---|
+|:---:|:---:|:---:|
 |Moscow|Pullman|Pendleton, OR|
 |Genesee|Palouse|Havre, MT|
 |Troy|Tekoa|Akron, CO|
