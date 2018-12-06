@@ -8,21 +8,13 @@ Data is requested from the Northwest Knowledge Network THREDDS server. The URL i
 
 Data is collected by running `netcdf_downloader.R`. The functions `open.nc` and `var.get.nc` from the `RNetCDF` package are used to collect data from the appropriate raster within the dataset for each location. Unfortunately, it takes forever to download and the `for` loop is not parallelized. I currently have data for the following locations:
 
-- Moscow, ID
-- Genesee, ID
-- Troy, ID
-- Deary, ID
-- Potlatch, ID
-- Pullman, WA
-- Palouse, WA
-- Tekoa, WA
-- Hay, WA
-- Endicott, WA
-- Pendleton, OR
-- Havre, MT
-- Akron, CO
-- Hutchinson, KS
-- Enid, OK
+|Idaho|Washington|Other states|
+|---|---|---|
+|Moscow|Pullman|Pendleton, OR|
+|Genesee|Palouse|Havre, MT|
+|Troy|Tekoa|Akron, CO|
+|Deary|Endicott|Hutchinson, KS|
+|Potlatch|Hay|Enid, OK|
 
 Data for Pullman, WA is in the `DATA` folder. Update line 8 of `init.R` to `sites <- c("Pullman Washington")` and run the appropriate code to set `N` to 1 and query latitude, longitude, and elevation data. The `locations` dataframe can also be used to load in previously downloaded arrays by running `loading_arrays.R`. When starting from saved arrays, be sure that `model` is in your environment as it gets called during subsequent processing while printing progress.
 
