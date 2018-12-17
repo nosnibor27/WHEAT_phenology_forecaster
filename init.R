@@ -101,11 +101,11 @@ planting_depth <- 2
 planting_dates <- c("-09-01","-10-01","-11-01")
 
 #assigning genetic photoperiod coefficient using "Nugaines" wheat (G_1)
-G_1 <- 0.0044
+G_1 <- 0.004075
 
 #need to set leaf appearance rate based on thermal time per leaf (phyllochron) 
 #when not known a good recommended estimate is 95
-phyllochron <- 95
+phyllochron <- 100
 
 #running the CERES-Wheat model using the inputs above
 source("CERES_wheat_model.r")
@@ -117,6 +117,8 @@ source("additional_weather_variables.r")
 source("plotting.r")
 
 #plotting dashboard example
-PLOT_DASHBOARD_1(1,4,2)
+PLOT_DASHBOARD_1(6,6,2)
 
-PLOT_DASHBOARD_2(5,4,2)
+PLOT_DASHBOARD_2(6,4,2)
+
+
