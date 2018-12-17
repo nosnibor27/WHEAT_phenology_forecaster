@@ -90,7 +90,7 @@ PLOT_DOY <- function(n,s,p){
   lines(y=quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
 }
 
-PLOT_AVG_TEMP <- function(n,s,p){
+PLOT_AVG_TEMP <- function(n,s,p,title){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
@@ -125,7 +125,7 @@ PLOT_AVG_TEMP <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,40),xlab="Year",ylab="C",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,40,5),las=2)
@@ -141,7 +141,7 @@ PLOT_AVG_TEMP <- function(n,s,p){
   mtext("Mean Temperature",side=3,line=-1.5)
 }
 
-PLOT_RH <- function(n,s,p){
+PLOT_RH <- function(n,s,p,title){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
@@ -176,7 +176,7 @@ PLOT_RH <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,1),xlab="Year",ylab="%",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,1,0.1),las=2,labels=seq(0,100,10))
@@ -192,7 +192,7 @@ PLOT_RH <- function(n,s,p){
   mtext("Relative humidity",side=3,line=-1.5)
 }
 
-PLOT_VPD <- function(n,s,p){
+PLOT_VPD <- function(n,s,p,title){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
@@ -227,7 +227,7 @@ PLOT_VPD <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,3),xlab="Year",ylab="kPa",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,3,0.5),las=2)
@@ -243,7 +243,7 @@ PLOT_VPD <- function(n,s,p){
   mtext("Vapor pressure deficit",side=3,line=-1.5)
 }
 
-PLOT_HDX <- function(n,s,p){
+PLOT_HDX <- function(n,s,p,title){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
@@ -278,7 +278,7 @@ PLOT_HDX <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,30),xlab="Year",ylab="C",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,30,5),las=2)
@@ -294,7 +294,7 @@ PLOT_HDX <- function(n,s,p){
   mtext("Humidex",side=3,line=-1.5)
 }
 
-PLOT_ETo <- function(n,s,p){
+PLOT_ETo <- function(n,s,p,title){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
@@ -329,7 +329,7 @@ PLOT_ETo <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,100),xlab="Year",ylab="mm",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,100,10),las=2)
@@ -345,7 +345,7 @@ PLOT_ETo <- function(n,s,p){
   mtext("Potential evapotranspiration",side=3,line=-1.5)
 }
 
-PLOT_RAIN <- function(n,s,p){
+PLOT_RAIN <- function(n,s,p,title){
   hist_vector <- rep(0,55)
   hist_matrix <- matrix(NA,20,55)
   A <- get(paste0(locations$town[n],"_hist"))
@@ -380,7 +380,7 @@ PLOT_RAIN <- function(n,s,p){
   }
   quantile_85 <- apply(rcp85_matrix,2,QUANT)
   plot(0,type="n",xlim=c(0,150),ylim=c(0,100),xlab="Year",ylab="mm",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,100,10),las=2)
@@ -396,7 +396,7 @@ PLOT_RAIN <- function(n,s,p){
   mtext("Rainfall",side=3,line=-1.5)
 }
 
-PLOT_STAGE <- function(n,s,p){
+PLOT_STAGE <- function(n,s,p,title){
   A <- get(paste0(locations$town[n],"_span_hist"))
   B <- get(paste0(locations$town[n],"_span_45"))
   C <- get(paste0(locations$town[n],"_span_85"))
@@ -410,7 +410,7 @@ PLOT_STAGE <- function(n,s,p){
   stage_lab <- c("Germination","Emergence","Tillering","Booting",
                  "Flowering","Grain filling","Maturity")
   plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="Day of the year",
-       main=NULL,axes=FALSE)
+       main=title,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
   axis(2,at=seq(0,350,50),las=2)
