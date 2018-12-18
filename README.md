@@ -40,4 +40,4 @@ Summary figures for 6 locations across the continental Unided States are availab
 
 The planting date used was October 1st. The darker shaded region is the inter-quartile range (25% to 75%), the lighter region is the inter-decile range (10 to 90%) and the thick line is the median (50%) for the 20 model ensemble.
 
-
+I added a `title` argument to some plotting functions when I was creating new plots and I have yet to update old code. I will probably set the default to 'NULL'.
