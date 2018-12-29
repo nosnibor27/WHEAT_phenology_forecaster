@@ -458,3 +458,20 @@ PLOT_DASHBOARD_2 <- function(n,s,p){
   PLOT_ETo(n,s,p)
   mtext(locations$sites[n],side=3,line=1,outer=TRUE,cex=3)
 }
+
+PLOT_DASHBOARD_3 <- function(n,p){
+  par(mfrow=c(2,6))
+  PLOT_AVG_TEMP(n,1,p,"Emergence")
+  PLOT_AVG_TEMP(n,2,p,"Tillering")
+  PLOT_AVG_TEMP(n,3,p,"Booting")
+  PLOT_AVG_TEMP(n,4,p,"Flowering")
+  PLOT_AVG_TEMP(n,5,p,"Grain Filling")
+  PLOT_AVG_TEMP(n,6,p,"Maturity")
+  PLOT_RH(n,1,p,"Emergence")
+  PLOT_RH(n,2,p,"Tillering")
+  PLOT_RH(n,3,p,"Booting")
+  PLOT_RH(n,4,p,"Flowering")
+  PLOT_RH(n,5,p,"Grain Filling")
+  PLOT_RH(n,6,p,"Maturity")
+}
+
