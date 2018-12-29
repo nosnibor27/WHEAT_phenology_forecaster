@@ -72,6 +72,6 @@ I can average climate conditions between the following phenological stages of wi
 * Fixed at 500 GDD
 * Variety specific, using inputs from Ritchie et al. (1991) can vary from 430 to 590 GDD (I could sample from a normal distribution as shown previously if needed)
 
-##Physiological maturity to harvest (maturity)
+## Physiological maturity to harvest (maturity)
 
-*Fixed at 250 GDD
+* Fixed at 250 GDD
