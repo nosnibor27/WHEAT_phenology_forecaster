@@ -46,31 +46,31 @@ I can average climate conditions between the following phenological stages of wi
 
 ## Emergence to terminal spikelet (emergence)
 
-*420 GDD (based on phyllochron)
-*This is the only stage that uses relative development rate based on the genetic photoperiod coefficient
+* 420 GDD (based on phyllochron)
+* This is the only stage that uses relative development rate based on the genetic photoperiod coefficient
 
 ## Terminal spikelet to end of ear growth (tillering)
 
-*300 GDD (3 phyllochrons)
-*"considered to be strictly under temperature control"
+* 300 GDD (3 phyllochrons)
+* "considered to be strictly under temperature control"
 
 ## Preanthesis ear growth (booting)
 
-*200 GDD (2 phyllochrons)
-*"ear develops very rapidly in this stage and is a major sink for assimilates"
-*"probably the most important stage determining grain numbers per plant expected to develop into full size kernels"
+* 200 GDD (2 phyllochrons)
+* "ear develops very rapidly in this stage and is a major sink for assimilates"
+* "probably the most important stage determining grain numbers per plant expected to develop into full size kernels"
 
 ## Preanthesis ear growth to grain filling (flowering)
 
-*Fixed at 200 GDD
-*"during this phase flowering takes place"
-*could perhaps be labelled "maximum ear size and volume to the time when linear grain mass accumulation begins"
-*this is the stage I've been using for Fusarium Head Blight risk
+* Fixed at 200 GDD
+* "during this phase flowering takes place"
+* could perhaps be labelled "maximum ear size and volume to the time when linear grain mass accumulation begins"
+* this is the stage I've been using for Fusarium Head Blight risk
 
 ## Grain filling to physiological maturity (grain filling)
 
-*Fixed at 500 GDD
-*Variety specific, using inputs from Ritchie et al. (1991) can vary from 430 to 590 GDD (I could sample from a normal distribution as shown previously if needed)
+* Fixed at 500 GDD
+* Variety specific, using inputs from Ritchie et al. (1991) can vary from 430 to 590 GDD (I could sample from a normal distribution as shown previously if needed)
 
 ##Physiological maturity to harvest (maturity)
 
