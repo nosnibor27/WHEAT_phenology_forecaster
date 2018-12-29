@@ -40,4 +40,38 @@ Summary figures for 6 locations across the continental Unided States are availab
 
 The planting date used was October 1st. The darker shaded region is the inter-quartile range (25% to 75%), the lighter region is the inter-decile range (10 to 90%) and the thick line is the median (50%) for the 20 model ensemble.
 
-I added a `title` argument to some plotting functions when I was creating new plots and I have yet to update old code. I will probably set the default to `NULL`.
+
+I can average climate conditions between the following phenological stages of winter wheat listed below. I included some supplemental information for each stage from Ritchie et al. (1991) and I also added the corresponding stage names from Feng. et al (2017) in parentheses if it helps. I also added the number of growing degree-days for each stage, assuming a phyllochron of 100 (instead of 95).
+
+
+## Emergence to terminal spikelet (emergence)
+
+*420 GDD (based on phyllochron)
+*This is the only stage that uses relative development rate based on the genetic photoperiod coefficient
+
+## Terminal spikelet to end of ear growth (tillering)
+
+*300 GDD (3 phyllochrons)
+*"considered to be strictly under temperature control"
+
+## Preanthesis ear growth (booting)
+
+*200 GDD (2 phyllochrons)
+*"ear develops very rapidly in this stage and is a major sink for assimilates"
+*"probably the most important stage determining grain numbers per plant expected to develop into full size kernels"
+
+## Preanthesis ear growth to grain filling (flowering)
+
+*Fixed at 200 GDD
+*"during this phase flowering takes place"
+*could perhaps be labelled "maximum ear size and volume to the time when linear grain mass accumulation begins"
+*this is the stage I've been using for Fusarium Head Blight risk
+
+## Grain filling to physiological maturity (grain filling)
+
+*Fixed at 500 GDD
+*Variety specific, using inputs from Ritchie et al. (1991) can vary from 430 to 590 GDD (I could sample from a normal distribution as shown previously if needed)
+
+##Physiological maturity to harvest (maturity)
+
+*Fixed at 250 GDD
