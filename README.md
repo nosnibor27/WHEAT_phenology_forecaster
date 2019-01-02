@@ -95,7 +95,7 @@ The weather variable I am averaging between developmental stages is vapor pressu
 - ![](https://placehold.it/15/ffffbf/000000?text=+) **1.2 - 1.6**; High transpiration (mid / late flowering)
 - ![](https://placehold.it/15/ffbfbf/000000?text=+) **> 1.6**; Danger zone (over transpiration)
 
-I am also plotting 3 different planting dates. The different columns represent either a September 1st, October 1st, or November 1st planting date.
+I am also plotting 3 different planting dates. The different columns represent either a September 1st, October 1st, or November 1st planting date. Uncertainty across models is visualized by coloring the inter-decile range (10 to 90%) and the inter-quartile range (25 to 75%) of the 20 model ensemble. The thick lines represent the 20 model median and are colored black, blue, and red for the historical simulation, RCP 4.5, and RCP 8.5, respectively.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
