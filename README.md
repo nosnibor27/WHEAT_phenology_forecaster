@@ -1,7 +1,7 @@
-# WW_phenology_forecaster: Forecasting climate conditions during phenological stages of winter wheat under climate change
+# WW_phenology_forecaster
 
 ## Background
-  This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The goal is to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) and trying to forecast how many days it will take to clear rent or accumulate enough savings for a major purchase. What I am doing is determining how many days it would take for average temperatures to sum past a given threshhold, and the units become growing degree-days (GDD). The underlying code was adapted from [here](https://stackoverflow.com/questions/21248946/calculation-of-sum-of-numbers-to-reach-a-certain-point) and presented below.
+  This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The main goal within this repository to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) and trying to forecast how many days it will take to clear rent or accumulate enough savings for a major purchase. What I am doing is determining how many days it would take for average temperatures to sum past a given threshhold, and the units become growing degree-days (GDD). The duration of growth for an agricultural crop is usually directly proportional to temperature, and using the sum of average daily temperatures to predict growth stages has been known since Reaumur in the 1700s. Since a plant's time scale is so closely coupled with the thermal environment, it folows to think of thermal time as a plant's view of time. Accumulating thermal time in the form of total GDD allows for the determination of the dates when various plant growth stages are likely to occur. The underlying code was adapted from [here](https://stackoverflow.com/questions/21248946/calculation-of-sum-of-numbers-to-reach-a-certain-point) and presented below.
   
 ```r
 S_1 <- as.vector(sapply(
@@ -12,7 +12,9 @@ S_2 <- as.vector(sapply(
     function(x) which(cumsum(vector_2[x:length(vector_2)]) >= stage_2)[1]))
 ```
 
-In the above example, `S_1` is the resulting vector from calculating how many days after each entry in `start` it takes to hit the number of GDD specified for `stage_1` using the daily average temperature values from `vector_1`. In this case, `S_1` is the number of days it takes for the seedlings to emerge after germinating. What is nice is that I can 
+In the above example, `S_1` is the resulting vector from calculating how many days after each entry in `start` it takes to hit the number of GDD specified for `stage_1` using the daily average temperature values from `vector_1`. In this case, `S_1` is the number of days it takes for the seedlings to emerge after germinating. What is nice is that I can add `S_1` to `start` to calculate the index location where emergence occurs and also continue using a new growth stage specified using `stage_2`. I can also sum along different sources of temperature data, and in my case `vector_2` is a modified version of GDD which accounts for the delay induced by the genetic susceptibility of a given wheat cultivar to changes in photoperiod. This process continues for 7 stages of winter wheat development.
+
+
 
 The master file is `init.R`. Locations in the form of "Town Location" are concatenated into a vector called `sites`. The `geocode` function from the `ggmap` package is used to query the appropriate coordinates and add them to the `locations` dataframe. The "Town Location" format is important as "Town" will be utilized when naming the subsequent arrays. Elevation data is queried next by locating the appropriate raster within the gridMET database using a netCDF file.
 
