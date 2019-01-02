@@ -87,7 +87,7 @@ I have plotted below the results for Pullman, WA for every growth stage I can in
 - **Grain fill**: from grain mass accumulation to physiological maturity
 - **Maturity**:  from physiological maturity to harvest
 
-To give some biological relevance for VPD values I am coloring various ranges according to [this image](http://www.just4growers.com/media/23631/vpd_2degree.gif). The different colors are summarized below
+The weather variable I am averaging between developmental stages is vapor pressure deficit (VPD). Whereas relative humidity (RH) is the ratio of ambient over saturation vapor pressure, VPD is calculated as the difference of saturation minus ambient vapor pressure. To give some biological relevance for VPD values I am coloring various ranges according to [this image](http://www.just4growers.com/media/23631/vpd_2degree.gif). The different colors are summarized below
 
 - ![](https://placehold.it/15/ffbfbf/000000?text=+) **0 - 0.4**; Danger zone (under transpiration)
 - ![](https://placehold.it/15/bfbfff/000000?text=+) **0.4 - 0.8**; Low transpiration (propagation / early vegetative growth)
@@ -95,38 +95,9 @@ To give some biological relevance for VPD values I am coloring various ranges ac
 - ![](https://placehold.it/15/ffffbf/000000?text=+) **1.2 - 1.6**; High transpiration (mid / late flowering)
 - ![](https://placehold.it/15/ffbfbf/000000?text=+) **> 1.6**; Danger zone (over transpiration)
 
+I am also plotting 3 different planting dates. The different columns represent either a September 1st, October 1st, or November 1st planting date.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
 </p>
 
-## Emergence to terminal spikelet (emergence)
-
-* 420 GDD (based on phyllochron)
-* This is the only stage that uses relative development rate based on the genetic photoperiod coefficient
-
-## Terminal spikelet to end of ear growth (tillering)
-
-* 300 GDD (3 phyllochrons)
-* "considered to be strictly under temperature control"
-
-## Preanthesis ear growth (booting)
-
-* 200 GDD (2 phyllochrons)
-* "ear develops very rapidly in this stage and is a major sink for assimilates"
-* "probably the most important stage determining grain numbers per plant expected to develop into full size kernels"
-
-## Preanthesis ear growth to grain filling (flowering)
-
-* Fixed at 200 GDD
-* "during this phase flowering takes place"
-* could perhaps be labelled "maximum ear size and volume to the time when linear grain mass accumulation begins"
-* this is the stage I've been using for Fusarium Head Blight risk
-
-## Grain filling to physiological maturity (grain filling)
-
-* Fixed at 500 GDD
-* Variety specific, using inputs from Ritchie et al. (1991) can vary from 430 to 590 GDD (I could sample from a normal distribution as shown previously if needed)
-
-## Physiological maturity to harvest (maturity)
-
-* Fixed at 250 GDD
