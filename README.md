@@ -79,7 +79,10 @@ After all the index locations have been determined, additional humidity related 
 ## Putting it all together
 
 - ![](https://placehold.it/15/ffbfbf/000000?text=+) test
-
+- ![](https://placehold.it/15/bfbfff/000000?text=+) test
+- ![](https://placehold.it/15/bfffbf/000000?text=+) test
+- ![](https://placehold.it/15/ffffbf/000000?text=+) test
+- ![](https://placehold.it/15/ffbfbf/000000?text=+) test
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
