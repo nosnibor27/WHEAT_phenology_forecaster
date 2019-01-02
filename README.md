@@ -78,11 +78,13 @@ After all the index locations have been determined, additional humidity related 
 
 ## Putting it all together
 
-- ![](https://placehold.it/15/ffbfbf/000000?text=+) test
-- ![](https://placehold.it/15/bfbfff/000000?text=+) test
-- ![](https://placehold.it/15/bfffbf/000000?text=+) test
-- ![](https://placehold.it/15/ffffbf/000000?text=+) test
-- ![](https://placehold.it/15/ffbfbf/000000?text=+) test
+To give some biological relevance for VPD values I am coloring various ranges according to [this image](http://www.just4growers.com/media/23631/vpd_2degree.gif). The different colors are summarized below
+
+- ![](https://placehold.it/15/ffbfbf/000000?text=+) 0 - 0.4; Danger zone (under transpiration)
+- ![](https://placehold.it/15/bfbfff/000000?text=+) 0.4 - 0.8; Low transpiration (propagation / early vegetative growth)
+- ![](https://placehold.it/15/bfffbf/000000?text=+) 0.8 - 1.2; Healthy transpiration (late vegetative growth / early flowering)
+- ![](https://placehold.it/15/ffffbf/000000?text=+) 1.2 - 1.6; High transpiration (mid / late flowering)
+- ![](https://placehold.it/15/ffbfbf/000000?text=+) > 1.6; Danger zone (over transpiration)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
