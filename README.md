@@ -1,7 +1,16 @@
 # WW_phenology_forecaster
 ## Forecasting climate conditions during phenological stages of winter wheat under climate change
 
-This repository is, at it's core, an applied indexing problem.
+##Background
+  This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The goal is to determine the number of days to hit a specified sum, given a specific starting starting date. This approach is analogous to having an income column (in $/day) and trying to forecast how many days it will take to clear rent or accumulate enough savings for a major purchase. What I am doing is determining how many days it would take for average temperatures to sum past a given threshhold, and the units become growing degree-days. The underlying code was adapted from [here](https://stackoverflow.com/questions/21248946/calculation-of-sum-of-numbers-to-reach-a-certain-point) and presented below.
+```r
+S_1 <- as.vector(sapply(
+    start,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_1)[1]))
+  S_2 <- as.vector(sapply(
+    start + S_1,
+    function(x) which(cumsum(vector_2[x:length(vector_2)]) >= stage_2)[1]))
+```
 
 The master file is `init.R`. Locations in the form of "Town Location" are concatenated into a vector called `sites`. The `geocode` function from the `ggmap` package is used to query the appropriate coordinates and add them to the `locations` dataframe. The "Town Location" format is important as "Town" will be utilized when naming the subsequent arrays. Elevation data is queried next by locating the appropriate raster within the gridMET database using a netCDF file.
 
