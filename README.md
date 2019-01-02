@@ -78,6 +78,7 @@ After all the index locations have been determined, additional humidity related 
 
 ![](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/blob/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png)
 
+![](https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/blob/master/plotting_examples/Pullman_flowering.png)
 
 ## Emergence to terminal spikelet (emergence)
 
