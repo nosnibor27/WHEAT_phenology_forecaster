@@ -76,6 +76,12 @@ Running `CERES_wheat_model.R` initializes the wheat growth model. It begins by c
 
 After all the index locations have been determined, additional humidity related variables are calculated for each location by running `additional_weather_variables.R`. The current list of calculated variables are: relative humidity, vapor pressure deficit, humidex (or humisery), and potential evapotranspiration.
 
+## Putting it all together
+
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) test
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0`
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
 </p>
