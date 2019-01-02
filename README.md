@@ -78,13 +78,22 @@ After all the index locations have been determined, additional humidity related 
 
 ## Putting it all together
 
+I have plotted below the results for Pullman, WA for every growth stage I can index between, except germination. The different stages and their bounds are summarized below
+
+- **Emergence**: from seedling emergence to terminal spikelet initiation
+- **Tillering**: from terminal spikelet initiation to end of leaf growth
+- **Booting**: from end of leaf growth to maximum ear size and volume
+- **Flowering**: from maximum ear size and volume to beginning of linear grain mass accumulation
+- **Grain fill**: from grain mass accumulation to physiological maturity
+- **Maturity**:  from physiological maturity to harvest
+
 To give some biological relevance for VPD values I am coloring various ranges according to [this image](http://www.just4growers.com/media/23631/vpd_2degree.gif). The different colors are summarized below
 
-- ![](https://placehold.it/15/ffbfbf/000000?text=+) 0 - 0.4; Danger zone (under transpiration)
-- ![](https://placehold.it/15/bfbfff/000000?text=+) 0.4 - 0.8; Low transpiration (propagation / early vegetative growth)
-- ![](https://placehold.it/15/bfffbf/000000?text=+) 0.8 - 1.2; Healthy transpiration (late vegetative growth / early flowering)
-- ![](https://placehold.it/15/ffffbf/000000?text=+) 1.2 - 1.6; High transpiration (mid / late flowering)
-- ![](https://placehold.it/15/ffbfbf/000000?text=+) > 1.6; Danger zone (over transpiration)
+- ![](https://placehold.it/15/ffbfbf/000000?text=+) **0 - 0.4**; Danger zone (under transpiration)
+- ![](https://placehold.it/15/bfbfff/000000?text=+) **0.4 - 0.8**; Low transpiration (propagation / early vegetative growth)
+- ![](https://placehold.it/15/bfffbf/000000?text=+) **0.8 - 1.2**; Healthy transpiration (late vegetative growth / early flowering)
+- ![](https://placehold.it/15/ffffbf/000000?text=+) **1.2 - 1.6**; High transpiration (mid / late flowering)
+- ![](https://placehold.it/15/ffbfbf/000000?text=+) **> 1.6**; Danger zone (over transpiration)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
