@@ -2,7 +2,7 @@
 
 ## Background
 
-This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The main goal within this repository to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) and trying to calculate how many days it will take to clear rent or accumulate enough savings for a major purchase. 
+This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The main goal within this repository to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) and trying to calculate how many days it will take to  accumulate enough savings for a major purchase.
 
 What I am doing is determining how many days it would take for average temperatures to sum past a given threshhold, and the units become growing degree-days (GDD). The duration of growth for an agricultural crop is usually directly proportional to temperature, and using the sum of average daily temperatures to predict growth stages has been known since Reaumur in the 1700s. Since a plant's time scale is so closely coupled with the thermal environment, it follows to think of thermal time as a plant's view of time. Accumulating thermal time in the form of total GDD allows for the determination of the dates when various plant growth stages are likely to occur.
 
