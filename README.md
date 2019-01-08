@@ -6,7 +6,7 @@ This repository is, at it's core, an applied indexing problem. Imagine you have 
 
 What I am doing is determining how many days it would take for average temperatures to sum past a given threshhold, and the units become growing degree-days (GDD) which is a measure of thermal time. Since a plant's time scale is so closely coupled with the thermal environment, it follows to think of thermal time as a plant's view of time. Accumulating thermal time in the form of total GDD allows for the determination of the dates when various plant growth stages are likely to occur.
 
-The underlying code which makes all this possible was adapted from [here](https://stackoverflow.com/questions/21248946/calculation-of-sum-of-numbers-to-reach-a-certain-point) and a snippet is presented below.
+The underlying code which makes all this possible was adapted from a [Stack Overflow thread](https://stackoverflow.com/questions/21248946/calculation-of-sum-of-numbers-to-reach-a-certain-point) and a snippet is presented below.
   
 ```r
 S_1 <- as.vector(sapply(
