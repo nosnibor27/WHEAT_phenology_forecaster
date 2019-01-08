@@ -21,7 +21,7 @@ In the above example, `S_1` is the resulting vector from calculating how many da
 
 I can also sum along different sources of temperature data, and in my case `vector_2` is a modified version of GDD which accounts for the delay induced by the genetic susceptibility of a given wheat cultivar to changes in photoperiod. This process continues for 7 stages of winter wheat development, and I end up with an array of index locations for various wheat development stages. I can then use these index locations as bounds for subsetting other daily climate variables so that I can calculate things like average relative humidity during tillering or total rainfall during grain filling.
 
-Following the income analogy above, the same scripts could be used to determine how long it would take to save enough money and calculate the dates where different consecutive major purchases could be made given any date to start contributing to a savings account. Multiple vectors could represent different revenue streams.
+Following the income analogy above, the same scripts could be used to calculate the dates for how long it would take to save enough money for different consecutive major purchases, given any date to you wish to start contributing to a savings account. Multiple vectors could represent different revenue streams.
 
 Why am I doing this? There is a disease of winter wheat called *Fusarium Head Blight* (FHB) which is favored by hot and humid conditions during flowering. Infected grains become contaminated with a fungal poison colloquially referred to as *vomitoxin* and growers suffer economic losses from being unable to sell grains above the regulatory limit of 1 part per million. 
 
