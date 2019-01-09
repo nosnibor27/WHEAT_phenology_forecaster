@@ -15,6 +15,9 @@ S_1 <- as.vector(sapply(
 S_2 <- as.vector(sapply(
     start + S_1,
     function(x) which(cumsum(vector_2[x:length(vector_2)]) >= stage_2)[1]))
+S_3 <- as.vector(sapply(
+    start + S_1 + S_2,
+    function(x) which(cumsum(vector_1[x:length(vector_1)]) >= stage_3)[1]))
 ```
 
 In the above example, `S_1` is the resulting vector from calculating how many days after each planting date entry in `start` it takes to hit the number of GDD specified for `stage_1` using the daily average temperature values from `vector_1`. In this case, `S_1` is the number of days it takes for a wheat seedling to emerge after germinating. What is nice is that I can add `S_1` to `start` to calculate the index location where emergence occurs and then continue forward using a new growth stage specified using `stage_2`. 
