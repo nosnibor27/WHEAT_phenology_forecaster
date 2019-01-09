@@ -121,7 +121,7 @@ A decreased VPD during flowering may be suggestive of increased FHB risk. Unfort
 
 The former would be suggestive of increased FHB risk: the temperature remains warm and the humidity increases. The latter is the case for Pullman: the temperature decreases since flowering is forecasted to occur earlier in the year. This is visualized in other functions whichh plot more of a dashboard summary, and the results for flowering and maturity for 6 locations across the continental United States is available in the `plotting_examples` folder of this repository.
 
-It would appear that the climate conditions during flowering for the Inland Pacific Northwest are forecased to become cooler and wetter rather than warmer and wetter which would be suggestive of increased FHB risk. Deviations in VPD from the historical baseline are greater when using an earlier planting date, so growers may be able to preserve the status quo in the future by delaying their planting date to later in the year.
+It would appear that the climate conditions during flowering for the Inland Pacific Northwest are forecased to become cooler and wetter rather than warmer and wetter which would have been suggestive of increased FHB risk. Deviations in VPD from the historical baseline are greater when using an earlier planting date, so growers may be able to preserve the status quo in the future by delaying their planting date to later in the year.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_VPD_all_stages_all_dates.png" alt="data dump"/>
