@@ -117,10 +117,10 @@ To give some biological relevance for the VPD values (in kPa) I am coloring vari
 - ![](https://placehold.it/15/bfffbf/000000?text=+) **0.8 - 1.2**; Healthy transpiration (late vegetative growth / early flowering)
 - ![](https://placehold.it/15/ffffbf/000000?text=+) **1.2 - 1.6**; High transpiration (mid / late flowering)
 - ![](https://placehold.it/15/ffbfbf/000000?text=+) **> 1.6**; Danger zone (over transpiration)
-
+\
 I am also plotting 3 different planting dates. The different columns represent either a September 1st, October 1st, or November 1st planting date. Uncertainty across models is visualized by coloring the inter-decile range (10 to 90%) and the inter-quartile range (25 to 75%) of the 20 model ensemble in gray. The thick lines represent the 20 model median and are colored black, blue, and red for the historical simulation, RCP 4.5, and RCP 8.5, respectively.
 
-A decreased VPD during flowering may be suggestive of increased FHB risk. Unfortunately, there are two different ways that VPD can decrease. Either the ambient vapor pressure increases while saturation vapor pressure remains constant, or the saturation vapor pressure decreases while the ambient vapor presure remains constant. 
+A decreased VPD during flowering may be suggestive of increased FHB risk. Unfortunately, there are two different ways that VPD can decrease. Either the ambient vapor pressure increases relative to saturation vapor pressure, or the saturation vapor pressure decreases relative to ambient vapor presure. 
 
 The former would be suggestive of increased FHB risk: the temperature remains warm and the humidity increases. The latter is the case for Pullman: the temperature decreases since flowering is forecasted to occur earlier in the year. This is visualized in other functions whichh plot more of a dashboard summary, and the results for flowering and maturity for 6 locations across the continental United States is available in the `plotting_examples` folder of this repository.
 
