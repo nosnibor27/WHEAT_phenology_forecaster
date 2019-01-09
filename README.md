@@ -46,7 +46,7 @@ I ended up adapting a wheat growth model named CERES-Wheat to determine the numb
 
 For a given point location I can calculate the average temperature or relative humidity during flowering for a specific planting date and compare the values under climate change to the historical baseline. If relative humidity and temperature during flowering are forecasted to increase under climage change this may suggest increased FHB risk in the future. The nice part about leaving everything out in the open is that we can look into how changes in the input parameters may mitigate FHB risk and better prepare growers. 
 
-In trying to calculate a time window for flowering I ended up being able to calculate climate summaries for all other developmental stages as well. If you have a research question which could involve other developmental stages, or even domain knowledge about how to better interpret the results for a different development stage, please let me know so we can expand the scope to reach a wider audience.
+In trying to calculate a time window for flowering I ended up being able to calculate climate summaries for all other developmental stages as well. If you have a research question which could involve a similar approach, or even domain knowledge about how to better interpret the results for a different development stage, please let me know so we can expand the scope to reach a wider audience.
 
 ## Downloading daily climate data
 
