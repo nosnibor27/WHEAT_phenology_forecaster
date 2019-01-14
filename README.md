@@ -26,7 +26,7 @@ I can also sum along different sources of temperature data, and in my case `vect
 
 Following the income analogy above, the same scripts could be used to calculate the dates for how long it would take to save enough money for different consecutive major purchases, given any date to you wish to start contributing to a savings account. Multiple vectors could represent different revenue streams.
 
-Why am I doing this? There is a disease of winter wheat called *Fusarium Head Blight* (FHB) which is favored by hot and humid conditions during flowering. Infected grains become contaminated with a fungal poison colloquially referred to as *vomitoxin* and growers suffer economic losses from being unable to sell grains above the regulatory limit of 1 part per million. 
+Why am I doing this? There is a disease of wheat called *Fusarium Head Blight* (FHB) which is favored by hot and humid conditions during flowering. Infected grains become contaminated with a fungal poison colloquially referred to as *vomitoxin* and growers suffer economic losses from being unable to sell grains above the regulatory limit of 1 part per million. 
 
 In states like Kansas where the majority of wheat is grown most of the annual precipition occurs in the spring. This is beneficial because the wheat crop is receiving abundant moisture at a time when it is needing it the most during growth, but also creates the favorable hot and humid conditions for the development of FHB. 
 
@@ -99,7 +99,7 @@ After all the index locations have been determined, additional humidity related 
 
 ## Putting it all together
 
-I have plotted below the results for Pullman, WA for every growth stage I can index between, except planting date to germination. The different stages and their bounds are summarized below
+I have plotted below the results for Pullman, WA for every growth stage I can index between, except planting date to emergence. The different stages and their bounds are summarized below
 
 - **Emergence**: from seedling emergence to terminal spikelet initiation
 - **Tillering**: from terminal spikelet initiation to end of leaf growth
