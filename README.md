@@ -1,5 +1,9 @@
 # WHEAT_phenology_forecaster
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_flowering.png" alt="data dump"/>
+</p>
+
 ## Background
 
 This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The main goal within this repository to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) for a savings account and trying to calculate how many days it will take to  accumulate enough money for a major purchase.
