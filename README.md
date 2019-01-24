@@ -1,7 +1,7 @@
 # WHEAT_phenology_forecaster
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_maturity.png" alt="data dump"/>
+  <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/Pullman_flowering.png" alt="data dump"/>
 </p>
 
 ## Background
