@@ -101,7 +101,7 @@ PLOT_DURATION <- function(n,s,p){
     quantile_45 <- apply(B[,,s,p]-B[,,s-1,p],2,QUANT)
     quantile_85 <- apply(C[,,s,p]-C[,,s-1,p],2,QUANT)
   }
-  plot(0,type="n",xlim=c(0,150),ylim=c(0,max(quantile_hist)+10),xlab="Year",ylab=paste(stage_lab[s],"duration (days)"),
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,max(c(quantile_hist,quantile_45,quantile_85))),xlab="Year",ylab=paste(stage_lab[s],"duration (days)"),
        main=NULL,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
@@ -181,7 +181,8 @@ PLOT_AVG_TEMP <- function(n,s,p){
     }
     quantile_85 <- apply(rcp85_matrix,2,QUANT)
   }
-  plot(0,type="n",xlim=c(0,150),ylim=c(0,40),xlab="Year",ylab=paste(stage_lab[s],"average temperature (°C)"),
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,40),xlab="Year",
+       ylab=paste(stage_lab[s],"average temperature (°C)"),
        main=NULL,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
@@ -510,6 +511,10 @@ PLOT_ETo <- function(n,s,p){
     }
     quantile_85 <- apply(rcp85_matrix,2,QUANT)
   }
+  k_c <- c(0.7,0.85,1,1.15,0.85,0.55,0.25)
+  quantile_hist <- quantile_hist*k_c[s]
+  quantile_45 <- quantile_45*k_c[s]
+  quantile_85 <- quantile_85*k_c[s]
   plot(0,type="n",xlim=c(0,150),ylim=c(0,max(c(quantile_hist,quantile_45,quantile_85))),
        xlab="Year",ylab=paste(stage_lab[s],"total evapotranspiration (mm)"),
        main=NULL,axes=FALSE)
@@ -593,11 +598,12 @@ PLOT_RAIN <- function(n,s,p,title){
     }
     quantile_85 <- apply(rcp85_matrix,2,QUANT)
   }
-  plot(0,type="n",xlim=c(0,150),ylim=c(0,100),xlab="Year",ylab=paste(stage_lab[s],"total rainfall (mm)"),
+  plot(0,type="n",xlim=c(0,150),ylim=c(0,max(c(quantile_hist,quantile_45,quantile_85))),
+       xlab="Year",ylab=paste(stage_lab[s],"total rainfall (mm)"),
        main=NULL,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
-  axis(2,at=seq(0,100,10),las=2)
+  axis(2,at=seq(0,400,10),las=2)
   shade(quantile_hist[c(1,5),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_hist[c(2,4),],lim=seq(1,55,1),col=col.alpha("black",0.15))
   shade(quantile_45[c(1,5),],lim=seq(55,147,1),col=col.alpha("blue",0.15))
