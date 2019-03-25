@@ -6,9 +6,9 @@
 
 ## Background
 
-This repository is, at it's core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The main goal within this repository to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) for a savings account and trying to calculate how many days it will take to  accumulate enough money for a major purchase.
+This repository is, at its core, an applied indexing problem. Imagine you have an Excel spreadsheet with two columns: date and average daily temperature. The main goal within this repository to determine the number of days to hit a specified sum, given a specific starting date. This approach is analogous to having an income column (in $/day) for a savings account and trying to calculate how many days it will take to  accumulate enough money for a major purchase.
 
-What I am doing is determining how many days it would take for average temperatures to sum past a given threshhold, and the units become *growing degree-days* (GDD) which is a measure of thermal time. Since a plant's time scale is so closely coupled with the thermal environment, it follows to think of thermal time as a plant's view of time. Accumulating thermal time in the form of total GDD allows for the determination of the dates when various plant growth stages are likely to occur.
+What I am doing is determining how many days it would take for average temperatures to sum past a given threshold, and the units become *growing degree-days* (GDD) which is a measure of thermal time. Since a plant's time scale is so closely coupled with the thermal environment, it follows to think of thermal time as a plant's view of time. Accumulating thermal time in the form of total GDD allows for the determination of the dates when various plant growth stages are likely to occur.
 
 The underlying code which makes all this possible was adapted from a [Stack Overflow thread](https://stackoverflow.com/questions/21248946/calculation-of-sum-of-numbers-to-reach-a-certain-point) and a snippet is presented below.
   
