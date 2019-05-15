@@ -1,7 +1,7 @@
 # WHEAT_phenology_forecaster
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/90s_dashboard.png" alt="data dump"/>
+  <img src="https://raw.githubusercontent.com/nosnibor27/WW_phenology_forecaster/master/plotting_examples/90s_dashboard_pullman.png" alt="data dump"/>
 </p>
 
 ## Background
