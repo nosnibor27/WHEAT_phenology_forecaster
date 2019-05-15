@@ -55,11 +55,11 @@ PLOT_INFO <- function(n,s,p){
        main=NULL,axes=FALSE)
   abline(v = 0, col = "#E2CD6D", lwd = 8000)
   box()
-  text(x=0,y=5,paste(stage_lab[s],"stage"),cex=2)
-  text(x=0,y=4,paste(locations$town[n]),cex=2)
-  text(x=0,y=3,paste(sub(".","",planting_dates[p]),"planting date"),cex=2)
-  text(x=0,y=2,paste(phyllochron,"GDD phyllochron"),cex=2)
-  text(x=0,y=1,"20 Model ensemble; RCP 8.5",cex=2)
+  text(x=0,y=5,paste(stage_lab[s],"stage"),cex=1.5)
+  text(x=0,y=4,paste(locations$town[n]),cex=1.5)
+  text(x=0,y=3,paste(sub(".","",planting_dates[p]),"planting date"),cex=1.5)
+  text(x=0,y=2,paste(phyllochron,"GDD phyllochron"),cex=1.5)
+  text(x=0,y=1,"20 Model ensemble; RCP 8.5",cex=1.5)
 }
 
 PLOT_STAGE <- function(n,s,p){
@@ -274,7 +274,7 @@ PLOT_RH <- function(n,s,p){
   }
   plot(0,type="n",xlim=c(0,150),ylim=c(0,1),xlab="Year",
        ylab="%",
-       main="Relative humidity",axes=FALSE)
+       main="Relative humidity (%)",axes=FALSE)
   abline(v = 0, col = "#E2CD6D", lwd = 8000)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
@@ -643,3 +643,5 @@ PLOT_90S_DASHBOARD <- function(n,s,p){
   PLOT_ETo(n,s,p)
   PLOT_VPD(n,s,p)
 }
+
+PLOT_90S_DASHBOARD(6,4,2)
