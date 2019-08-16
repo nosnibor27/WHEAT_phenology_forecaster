@@ -5,21 +5,9 @@ library(RNetCDF)
 library(zoo)
 
 #Add sites of interest here using "Town State"
-sites <- c("Moscow Idaho",
-           "Troy Idaho",
-           "Genesee Idaho",
-           "Deary Idaho",
-           "Potlatch Idaho",
-           "Pullman Washington",
-           "Palouse Washington",
-           "Tekoa Washington",
-           "Endicott Washington",
-           "Hay Washington",
-           "Pendleton Oregon",
-           "Havre Montana",
-           "Akron Colorado",
-           "Hutchinson Kansas",
-           "Enid Oklahoma")
+sites <- c("Pullman Washington",
+           "Walla Walla Washington",
+           "Moses Lake Washington")
 
 #creating a data frame
 locations <- data.frame(sites,stringsAsFactors = FALSE)
@@ -34,9 +22,13 @@ locations$town <- word(sites,1)
 locations$lon <- rep(NA,N)
 locations$lat <- rep(NA,N)
 
+# API for Google Maps
+google_key = 'AIzaSyBU6cCdTozkE1zwrbhTHPUXoF_gHYKbiog'
+register_google(key = google_key)
+
 #looking up coordinates
 for (n in 1:N){
-  gps <- geocode(sites[n],source = "dsk")
+  gps <- geocode(sites[n],source = "google")
   locations$lon[n] <- as.numeric(gps[1])
   locations$lat[n] <- as.numeric(gps[2])
 }
@@ -114,18 +106,18 @@ G_1 <- 0.004075
 
 #need to set leaf appearance rate based on thermal time per leaf (phyllochron) 
 #when not known a good recommended estimate is 95
-phyllochron <- 100
+phyllochron <- 120
 
 #running the CERES-Wheat model using the inputs above
-source("CERES_wheat_model.r")
+source("CERES_wheat_model_RDR_only.r")
 
 #adding humidity variables to the arrays
-source("additional_weather_variables.r")
+source("additional_weather_variables_rcp_85_only.r")
 
 #plotting functions
 source("plotting.r")
 
 #plotting dashboard example
-
+PLOT_STAGE(1,4,2)
 
 

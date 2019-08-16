@@ -257,3 +257,192 @@ for (n in 1:N){
     print(paste(locations$town[n],"RCP 8.5 now has ETo for",model[j]))
   }
 }
+
+#relative ascospore discharge by temperature
+FHB_risk_1 <- function(avg_temp){
+  ((5.317*(avg_temp/35)^1.501)*(1-(avg_temp/35)))^4.983
+}
+
+#adding a FHB_risk_1 dimension [variable = 13] to all the historical arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_hist"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_1 by model
+    A[13,j,] <- FHB_risk_1(A[7,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_hist"),A)
+    print(paste(locations$town[n],"historical simulation now has FHB_risk_1 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_1 dimension [variable = 13] to all the RCP 4.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_45"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_1 by model
+    A[13,j,] <- FHB_risk_1(A[7,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_45"),A)
+    print(paste(locations$town[n],"RCP 4.5 now has FHB_risk_1 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_1 dimension [variable = 13] to all the RCP 8.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_85"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_1 by model
+    A[13,j,] <- FHB_risk_1(A[7,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_85"),A)
+    print(paste(locations$town[n],"RCP 8.5 now has FHB_risk_1 for",model[j]))
+  }
+}
+
+#relative ascospore discharge by relative humidity
+FHB_risk_2 <- function(rh){
+  0.894^(100-rh*100)
+}
+
+#adding a FHB_risk_2 dimension [variable = 14] to all the historical arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_hist"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_2 by model
+    A[14,j,] <- FHB_risk_2(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_hist"),A)
+    print(paste(locations$town[n],"historical simulation now has FHB_risk_2 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_2 dimension [variable = 14] to all the RCP 4.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_45"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_2 by model
+    A[14,j,] <- FHB_risk_2(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_45"),A)
+    print(paste(locations$town[n],"RCP 4.5 now has FHB_risk_2 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_2 dimension [variable = 14] to all the RCP 8.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_85"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_2 by model
+    A[14,j,] <- FHB_risk_2(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_85"),A)
+    print(paste(locations$town[n],"RCP 8.5 now has FHB_risk_2 for",model[j]))
+  }
+}
+
+#relative ascospore discharge by relative humidity (trail et al)
+FHB_risk_3 <- function(rh){
+  0.0136*exp(3.8599*rh)
+}
+
+#adding a FHB_risk_3 dimension [variable = 15] to all the historical arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_hist"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_3 by model
+    A[15,j,] <- FHB_risk_3(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_hist"),A)
+    print(paste(locations$town[n],"historical simulation now has FHB_risk_3 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_3 dimension [variable = 15] to all the RCP 4.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_45"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_3 by model
+    A[15,j,] <- FHB_risk_3(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_45"),A)
+    print(paste(locations$town[n],"RCP 4.5 now has FHB_risk_3 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_3 dimension [variable = 15] to all the RCP 8.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_85"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_3 by model
+    A[15,j,] <- FHB_risk_3(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_85"),A)
+    print(paste(locations$town[n],"RCP 8.5 now has FHB_risk_3 for",model[j]))
+  }
+}
+
+#logical test days above relative humidity threshold
+FHB_risk_4 <- function(rh,level=0.7){
+  ifelse(rh>level,1,0)
+}
+
+#adding a FHB_risk_4 dimension [variable = 16] to all the historical arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_hist"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_4 by model
+    A[16,j,] <- FHB_risk_4(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_hist"),A)
+    print(paste(locations$town[n],"historical simulation now has FHB_risk_4 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_4 dimension [variable = 16] to all the RCP 4.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_45"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_4 by model
+    A[16,j,] <- FHB_risk_4(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_45"),A)
+    print(paste(locations$town[n],"RCP 4.5 now has FHB_risk_4 for",model[j]))
+  }
+}
+
+#adding a FHB_risk_4 dimension [variable = 16] to all the RCP 8.5 arrays
+for (n in 1:N){
+  #copying the array of interest
+  A <- get(paste0(locations$town[n],"_85"))
+  #looping through the models
+  for(j in 1:20){
+    #calculating FHB_risk_4 by model
+    A[16,j,] <- FHB_risk_4(A[9,j,])
+    #placing the results back into the array for each town
+    assign(paste0(locations$town[n],"_85"),A)
+    print(paste(locations$town[n],"RCP 8.5 now has FHB_risk_4 for",model[j]))
+  }
+}
+

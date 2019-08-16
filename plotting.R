@@ -182,7 +182,7 @@ PLOT_AVG_TEMP <- function(n,s,p){
     quantile_85 <- apply(rcp85_matrix,2,QUANT)
   }
   plot(0,type="n",xlim=c(0,150),ylim=c(0,40),xlab="Year",
-       ylab=paste(stage_lab[s],"average temperature (°C)"),
+       ylab=expression(paste("Average temperature (",degree,"C)")),
        main=NULL,axes=FALSE)
   box()
   axis(1,at=seq(0,150,25),las=1,labels=seq(1950,2100,25))
