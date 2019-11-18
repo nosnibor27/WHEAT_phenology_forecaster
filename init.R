@@ -22,10 +22,6 @@ locations$town <- word(sites,1)
 locations$lon <- rep(NA,N)
 locations$lat <- rep(NA,N)
 
-# API for Google Maps
-google_key = 'AIzaSyBU6cCdTozkE1zwrbhTHPUXoF_gHYKbiog'
-register_google(key = google_key)
-
 #looking up coordinates
 for (n in 1:N){
   gps <- geocode(sites[n],source = "google")
